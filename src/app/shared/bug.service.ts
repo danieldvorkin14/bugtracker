@@ -9,7 +9,7 @@ import { retry, catchError } from 'rxjs/operators';
 })
 
 export class BugService {
-  base_url = "http://localhost:3000";
+  baseurl = "http://localhost:3000";
 
   constructor(private http: HttpClient) { }
 
@@ -20,41 +20,41 @@ export class BugService {
   }
 
   CreateBug(data): Observable<Bug> {
-    return this.http.post<Bug>(this.base_url + '/bugtracking/' + JSON.stringify(data), this.httpOptions)
+    return this.http.post<Bug>(this.baseurl + '/bugtracking/', JSON.stringify(data), this.httpOptions)
     .pipe(
-      retry(1), catchError(this.errorHandl)
+      retry(1), catchError(this.errorHandle)
     )
   }
 
   GetIssue(id): Observable<Bug> {
-    return this.http.get<Bug>(this.base_url + '/bugtracking/' + id)
+    return this.http.get<Bug>(this.baseurl + '/bugtracking/' + id)
     .pipe(
-      retry(1), catchError(this.errorHandl)
+      retry(1), catchError(this.errorHandle)
     )
   }
 
   GetIssues(): Observable<Bug> {
-    return this.http.get<Bug>(this.base_url + '/bugtracking/')
+    return this.http.get<Bug>(this.baseurl + '/bugtracking/')
     .pipe(
-      retry(1), catchError(this.errorHandl)
+      retry(1), catchError(this.errorHandle)
     )
   }
 
   UpdateBug(id, data): Observable<Bug> {
-    return this.http.put<Bug>(this.base_url + '/bugtracking/' + id, JSON.stringify(data), this.httpOptions)
+    return this.http.put<Bug>(this.baseurl + '/bugtracking/' + id, JSON.stringify(data), this.httpOptions)
     .pipe(
-      retry(1), catchError(this.errorHandl)
+      retry(1), catchError(this.errorHandle)
     )
   }
 
   DeleteBug(id): Observable<Bug> {
-    return this.http.delete<Bug>(this.base_url + '/bugtracking/' + id, this.httpOptions)
+    return this.http.delete<Bug>(this.baseurl + '/bugtracking/' + id, this.httpOptions)
     .pipe(
-      retry(1), catchError(this.errorHandl)
+      retry(1), catchError(this.errorHandle)
     )
   }
 
-  errorHandl(error){
+  errorHandle(error){
     let errorMessage = '';
     if(error.error instanceof ErrorEvent){
       errorMessage = error.error.message;

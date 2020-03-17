@@ -1,9 +1,14 @@
 {
   "bugtracking": [
     {
-      "issue_name": "Tooltip Issue #1",
-      "issue_message": "Issue tracking testing testing",
+      "issue_name": "issue 1",
+      "issue_message": "this is issue 1",
       "id": 2
+    },
+    {
+      "issue_name": "Issue 2",
+      "issue_message": "this is issue 2",
+      "id": 3
     }
   ]
 }
