@@ -39,7 +39,7 @@ export class EditIssueComponent implements OnInit {
   submitForm(){
     var id = this.actRoute.snapshot.paramMap.get('id');
     this.bugService.UpdateBug(id, this.updateIssueForm.value).subscribe((res) => {
-      this.ngZone.run(() => this.router.navigateByUrl('/issue-list'))
+      this.ngZone.run(() => this.router.navigateByUrl('/issues-list'))
     })
   }
 

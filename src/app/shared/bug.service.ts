@@ -9,7 +9,7 @@ import { retry, catchError } from 'rxjs/operators';
 })
 
 export class BugService {
-  base_url = "https://localhost:3000";
+  base_url = "http://localhost:3000";
 
   constructor(private http: HttpClient) { }
 

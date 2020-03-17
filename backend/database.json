@@ -1,13 +1,8 @@
 {
   "bugtracking": [
     {
-      "issue_name": "Table Improvement",
-      "issue_message": "Issue tracking is awesome because of collaboration",
-      "id": 1
-    },
-    {
-      "issue_name": "Tooltip Issue",
-      "issue_message": "Issue tracking is awesome because of collaboration",
+      "issue_name": "Tooltip Issue #1",
+      "issue_message": "Issue tracking testing testing",
       "id": 2
     }
   ]
